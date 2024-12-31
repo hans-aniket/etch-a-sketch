@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+#mainBox{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-grow: inherit;
+    flex-direction: column;
+    flex-direction: row;
+    border: black solid;
+    border-radius: 1px;
+}
