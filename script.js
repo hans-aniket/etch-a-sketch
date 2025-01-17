@@ -1,9 +1,9 @@
-let numberofSquares = null;
+let gridLength = null;
 const resetBtn = document.querySelector('#resetBtn');
 
-resetBtn.addEventListener('click', (event) => {
-    numberofSquares = parseInt(prompt('Enter a number'), 10);
-    if (isNaN(numberofSquares) || numberofSquares <= 0) {
+resetBtn.addEventListener('click', () => {
+    gridLength = parseInt(prompt('Enter a number for grid side'));
+    if (isNaN(gridLength) || gridLength <= 0) {
         alert('Please enter a valid positive number');
         return;
     }
@@ -11,13 +11,13 @@ resetBtn.addEventListener('click', (event) => {
     const mainBox = document.querySelector('#mainBox');
     mainBox.innerHTML = ''; 
 
-    for (let i = 0; i < numberofSquares; i++) {
-        const childDiv = document.createElement('div'); 
+    const squareSize = 100 / gridLength; 
+
+    for (let i = 0; i < gridLength * gridLength; i++) {
+        const childDiv = document.createElement('div');
         childDiv.classList.add('square');
-        childDiv.style.backgroundColor = 'blue';
-        childDiv.style.width = '50px';
-        childDiv.style.height = '50px';
-        childDiv.style.margin = '5px';
-        mainBox.appendChild(childDiv); 
+        childDiv.style.width = `${squareSize}%`;
+        childDiv.style.height = `${squareSize}%`;
+        mainBox.appendChild(childDiv);
     }
 });
