@@ -7,6 +7,10 @@ resetBtn.addEventListener('click', () => {
         alert('Please enter a valid positive number');
         return;
     }
+    if( gridLength > 100) {
+        alert("limit exceeded, limit is 100")
+        return;
+    }
 
     const mainBox = document.querySelector('#mainBox');
     mainBox.innerHTML = ''; 
