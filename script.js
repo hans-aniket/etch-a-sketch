@@ -19,5 +19,9 @@ resetBtn.addEventListener('click', () => {
         childDiv.style.width = `${squareSize}%`;
         childDiv.style.height = `${squareSize}%`;
         mainBox.appendChild(childDiv);
+        childDiv.addEventListener('mouseover', () => {
+        childDiv.style.backgroundColor = "green";
+        });
     }
+
 });
